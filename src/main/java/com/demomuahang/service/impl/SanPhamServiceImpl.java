@@ -4,6 +4,8 @@ import com.demomuahang.models.SanPham;
 import com.demomuahang.repository.ISanPhamRepo;
 import com.demomuahang.service.ICrudService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +20,11 @@ public class SanPhamServiceImpl implements ICrudService<SanPham> {
     public List<SanPham> getAll() {
         return (List<SanPham>) iSanPhamRepo.findAll();
     }
+
+    public Page<SanPham> getAll(Pageable pageable) {
+        return iSanPhamRepo.findAll(pageable);
+    }
+
 
     @Override
     public void save(SanPham sanPham) {

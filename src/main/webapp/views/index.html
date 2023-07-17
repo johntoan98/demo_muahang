@@ -143,7 +143,6 @@
         </div>
 
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
-
           <div th:each="sp:${sanphams}" class="col-lg-6 menu-item filter-starters">
             <img th:src="${sp.img}" class="menu-img" alt="">
             <div class="menu-content">
@@ -153,9 +152,9 @@
               Lorem, deren, trataro, filede, nerada
             </div>
           </div>
-
         </div>
-
+      <div th:if="${sanphams.hasNext()}"> <a th:href="@{/sanpham(page=${sanphams.getNumber()} + 1)}">Next</a></div>
+      <div th:if="${sanphams.hasPrevious()}"> <a th:href="@{/sanpham(page=${sanphams.getNumber()} - 1)}">Previous</a></div>
       </div>
     </section><!-- End Menu Section -->
 
