@@ -95,8 +95,8 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a>
-
+      <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex" th:text="${account.username}"></a>
+      <img th:src="${account.avatar}" width="50" height="50">
     </div>
   </header><!-- End Header -->
 
